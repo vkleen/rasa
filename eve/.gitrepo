@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:vkleen/eve.git
+	branch = master
+	commit = e3024f039f2e503b621195f4014cd001df4f87cd
+	parent = ca4f5b00034c580289b42361a0696dee5e04aa85
+	cmdver = 0.3.1
