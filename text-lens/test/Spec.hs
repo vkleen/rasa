@@ -133,8 +133,6 @@ main = hspec $ describe "TextLens" $ do
   describe "range" $ do
     it "gets the proper range" $
       "hi hey hello" ^. TL.range 3 6 `shouldBe` "hey"
-    it "gets \"\" if invalid range" $
-      "hello" ^. TL.range 5 3 `shouldBe` ""
     it "gets full string" $
       "hello" ^. TL.range 0 5 `shouldBe` "hello"
 

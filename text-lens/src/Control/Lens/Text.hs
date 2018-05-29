@@ -38,9 +38,9 @@ intillPrevN n pat = lens getter setter
 
           setter old new = old
             & splittingBy pat . moreThanOne
-            .~ (T.dropEnd 
-                    (getter old ^. to T.length) 
-                    old <> new) 
+            .~ (T.dropEnd
+                    (getter old ^. to T.length)
+                    old <> new)
                 ^. splittingBy pat
 
 tillNextN :: Int -> T.Text -> Lens' T.Text T.Text
