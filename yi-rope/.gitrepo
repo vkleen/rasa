@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:vkleen/yi-rope.git
+	branch = master
+	commit = 7867909f4f20952be051fd4252cca5bbfc80cf41
+	parent = 22196a3d7d1636344fbefe3d1d48c46934f5a265
+	cmdver = 0.3.1
