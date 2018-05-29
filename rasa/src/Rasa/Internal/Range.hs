@@ -3,7 +3,7 @@
   , OverloadedStrings
   , DeriveFunctor
   , ScopedTypeVariables
-  , TemplateHaskell 
+  , TemplateHaskell
 #-}
 module Rasa.Internal.Range
   ( Coord
@@ -38,7 +38,6 @@ module Rasa.Internal.Range
 import Rasa.Internal.Text
 import Control.Lens
 
-import Data.Monoid
 import Data.List
 import Data.Bifunctor
 import Data.Biapplicative
@@ -74,7 +73,7 @@ instance (Ord a, Ord b) => Ord (Range a b) where
 -- | (Coord Row Column) represents a char in a block of text. (zero indexed)
 -- e.g. Coord 0 0 is the first character in the text,
 -- Coord 2 1 is the second character of the third row
-data Coord' a b = Coord 
+data Coord' a b = Coord
   { _coordRow::a
   , _coordCol::b
   } deriving (Eq)

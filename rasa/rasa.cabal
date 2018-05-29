@@ -33,16 +33,16 @@ description:         A modular text editor
   .
   * Fragmentation; Not having a single implementation for a given feature means extensions that depend on a feature have to pick a specific implementation to augment. Over time data-structures and types will be standardized into Rasa's core to help alleviate this.
   .
-  While highly experimental, I've found the current API to be quite expressive and adaptable; 
+  While highly experimental, I've found the current API to be quite expressive and adaptable;
   for instance I was able to implement the notion of multiple cursors using the extension API in less than a day. I hope to keep the learning curve low as development continues.
   .
   /Getting Started/
   .
   First clone the <https://github.com/ChrisPenner/rasa Github repo>
-  and try running the example-config included there. 
+  and try running the example-config included there.
   Once you get it running (see the <https://github.com/ChrisPenner/rasa/blob/master/README.md README>) then you
-  can customize your keymap to add a few mappings you like. 
-  Then I'd check out the 
+  can customize your keymap to add a few mappings you like.
+  Then I'd check out the
   <https://github.com/ChrisPenner/rasa/blob/master/docs/Building-An-Extension.md Building your own extensions guide>.
   It goes in depth into everything you'd want to know!
   .
@@ -63,7 +63,7 @@ library
 
   ghc-options:         -Wall
   build-depends:       base >= 4.9 && < 5
-                     , eve == 0.1.7
+                     , eve
                      , async
                      , bifunctors
                      , profunctors
