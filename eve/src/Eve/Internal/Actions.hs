@@ -44,10 +44,12 @@ newtype ActionT base zoomed m a = ActionT
 
 instance (Monoid a, Monad m) => Monoid (ActionT base zoomed m a) where
   mempty = return mempty
-  a `mappend` b = do
+
+instance (Semigroup a, Monad m) => Semigroup (ActionT base zoomed m a) where
+  a <> b = do
     a' <- a
     b' <- b
-    return $ a' `mappend` b'
+    return $ a' <> b'
 
 instance Monad n => MonadFree (AppF base n) (ActionT base zoomed n) where
   wrap (RunApp act) = join . ActionT . liftF . RunApp $ act
