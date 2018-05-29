@@ -3,7 +3,6 @@ module Control.Lens.Text where
 
 import Control.Lens
 import qualified Data.Text as T
-import Data.Monoid
 import Data.List.Extra (takeEnd, dropEnd)
 
 
