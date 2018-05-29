@@ -24,7 +24,7 @@ library
                        Rasa.Ext.Views.Internal.AnyRenderable
                        Rasa.Ext.Views.Internal.StatusBar
 
-  build-depends:       base >= 4.8 && < 5
+  build-depends:       base
                      , rasa
                      , lens
                      , data-default
