@@ -12,6 +12,7 @@ convertStyle (Style (fg', bg', flair')) = V.Attr
                                         (maybe V.KeepCurrent convertFlair flair')
                                         (maybe V.KeepCurrent convertColor fg')
                                         (maybe V.KeepCurrent convertColor bg')
+                                        V.KeepCurrent
 
 -- | Convert flair from "Rasa.Ext.Style" into 'V.Style's
 convertFlair :: Flair -> V.MaybeDefault V.Style
@@ -44,10 +45,12 @@ newtype AttrMonoid = AttrMonoid {
   getAttr :: V.Attr
 }
 
+instance Semigroup AttrMonoid where
+  AttrMonoid v <> AttrMonoid v' = AttrMonoid $ v <> v'
+
 -- | We want 'mempty' to be 'V.defAttr' instead of 'V.currentAttr' for use in 'combineSpans'.
 instance Monoid AttrMonoid where
   mempty = AttrMonoid V.defAttr
-  AttrMonoid v `mappend` AttrMonoid v' = AttrMonoid $ v `mappend` v'
 
 -- | Apply a list of styles to the given text, resulting in a 'V.Image'.
 applyAttrs :: RenderInfo -> V.Image
